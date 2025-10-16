@@ -1,6 +1,8 @@
 package se.lexicon;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Scanner;
 
 public class ValutaConverterHelper {
@@ -26,14 +28,15 @@ public class ValutaConverterHelper {
 
     public static String calculateExchangeAmount(int choice, double amount) {
         LocalDateTime localDateTime = LocalDateTime.now();
+        String customDateFormat = localDateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));
         if(choice ==1) //SEK to USD
-            return ("You get USD: " + SEK_TO_USD * amount + " " + "\n" + localDateTime.toString());
+            return ("You get USD: " + SEK_TO_USD * amount + " " + "\n" + customDateFormat);
         else if (choice == 2 )
-            return ("You get SEK: " + USD_TO_SEK * amount+ " " + "\n" + localDateTime.toString());
+            return ("You get SEK: " + USD_TO_SEK * amount+ " " + "\n" + customDateFormat);
         else if (choice == 3)
-            return ("You get EUR:" + SEK_TO_EUR * amount+ " " +"\n" +  localDateTime.toString());
+            return ("You get EUR:" + SEK_TO_EUR * amount+ " " +"\n" +  customDateFormat);
         else
-            return ( "You get SEK: " + EUR_TO_SEK *amount+ " " + "\n" + localDateTime.toString());
+            return ( "You get SEK: " + EUR_TO_SEK *amount+ " " + "\n" + customDateFormat);
         // Invalid input will be handled in the main
         }
 
