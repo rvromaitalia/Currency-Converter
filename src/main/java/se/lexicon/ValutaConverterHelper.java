@@ -15,7 +15,7 @@ public class ValutaConverterHelper {
     public static final double EUR_TO_SEK = 11.35;
 
 
-    public static String returnConsoleUi(){
+    public static String returnMenuText(){
         return
                 "Currency Converter APP\n" +
                 "1. Convert SEK to USD\n" +
@@ -30,14 +30,13 @@ public class ValutaConverterHelper {
         LocalDateTime localDateTime = LocalDateTime.now();
         String customDateFormat = localDateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));
         if(choice ==1) //SEK to USD
-            return ("You get USD: " + SEK_TO_USD * amount + " " + "\n" + customDateFormat);
+            return ("You get : " + SEK_TO_USD * amount + "USD" + "\n" + customDateFormat);
         else if (choice == 2 )
-            return ("You get SEK: " + USD_TO_SEK * amount+ " " + "\n" + customDateFormat);
+            return ("You get: " + USD_TO_SEK * amount+ " SEK" + "\n" + customDateFormat);
         else if (choice == 3)
-            return ("You get EUR:" + SEK_TO_EUR * amount+ " " +"\n" +  customDateFormat);
+            return ("You get:" + SEK_TO_EUR * amount+ " EUR" +"\n" +  customDateFormat);
         else
-            return ( "You get SEK: " + EUR_TO_SEK *amount+ " " + "\n" + customDateFormat);
-        // Invalid input will be handled in the main
+            return ( "You get: " + EUR_TO_SEK *amount+  " SEK" + "\n" + customDateFormat);
         }
 
 

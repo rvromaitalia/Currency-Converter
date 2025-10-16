@@ -1,8 +1,6 @@
     package se.lexicon;
     import java.util.Scanner;
 
-    //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-    // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
     public class Main {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
@@ -11,7 +9,7 @@
             double amount;
             
             //Initialize console UI
-            System.out.println(ValutaConverterHelper.returnConsoleUi());
+            System.out.println(ValutaConverterHelper.returnMenuText());
 
             while (true){
                 choice = ValutaConverterHelper.readMenuChoice(scanner, "Enter your choice: ");
